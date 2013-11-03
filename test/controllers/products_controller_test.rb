@@ -20,6 +20,8 @@ class ProductsControllerTest < ActionController::TestCase
   test "should get new" do
     get :new
     assert_response :success
+    assert_select '#columns #main form'
+    assert_select 'form input', 5  # includes button...
   end
 
   test "should create product" do
